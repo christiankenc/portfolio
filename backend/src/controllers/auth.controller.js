@@ -140,7 +140,7 @@ export const logout = async (req, res) => {
 export const checkAuth = async (req, res) => {
   try {
     // find user in the database
-    const user = await User.findById(req.userId);
+    const user = await User.findById(req.user.id);
 
     // if user doesn't exists, send message
     if (!user) {
